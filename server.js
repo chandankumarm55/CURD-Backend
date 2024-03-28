@@ -1,5 +1,6 @@
 const express = require('express');
 require('dotenv').config();
+const cors = require('cors);
 
 const app = express();
 const workOutRoutes = require('./routes/workout');
@@ -13,7 +14,7 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 
-
+app.use(cors());
 // Routes
 app.use('/api/workouts', workOutRoutes);
 
